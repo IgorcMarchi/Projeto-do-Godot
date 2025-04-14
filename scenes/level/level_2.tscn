@@ -14,3 +14,4 @@ position = Vector2(264, 257)
 
 [node name="Portal" parent="." index="6"]
 position = Vector2(774, 208)
+scene_path = "res://scenes/level/level_1.tscn"

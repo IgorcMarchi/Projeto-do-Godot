@@ -22,12 +22,12 @@ var knockback_direction: Vector2 # direção que knockback vai fazer o personage
 
 @export var damage: int = 5
 
-func _ready() -> void:
-	max_health = health
+func _ready() -> void: # quando iniciar
+	max_health = health # vida maxima é igual a vida
 	
 	
 func _physics_process(delta: float) -> void:
-	if is_dead:
+	if is_dead: # se estiver morto
 		return
 		
 	if on_knockback:
@@ -84,7 +84,7 @@ func update_health(target_position: Vector2, value: int, type: String) -> void: 
 		on_knockback = true # knockback ativado
 		# 25 HP - 5 = 20, 0, 25
 		health = clamp(health - value, 0, max_health) # tira vida
-		transition_screen.current_health = health
+		transition_screen.current_health = int(health)
 		get_tree().call_group("interface", "update_health", health)
 		
 		if health == 0: # Se tiver igual a 0 então morreu
@@ -94,7 +94,7 @@ func update_health(target_position: Vector2, value: int, type: String) -> void: 
 		return
 	if type == "increase":
 		health = clamp(health + value, 0, max_health) # Aumenta vida
-		transition_screen.current_health = health
+		transition_screen.current_health = int(health)
 		get_tree().call_group("interface", "update_health", health)
 		
 	

@@ -3,7 +3,7 @@ extends ParallaxBackground
 @onready var  parallax_layer:  ParallaxLayer = get_node("ParallaxLayer")
 @onready var backgound_layer: TextureRect = get_node("ParallaxLayer/BackgroundLayer")
 
-var background_images_list: Array = [
+var background_images_list: Array = [ # Lista da cor de fundo do mapa
 	"res://assests/Background/Blue.png", # 0
 	"res://assests/Background/Brown.png", # 1
 	"res://assests/Background/Gray.png", # 2

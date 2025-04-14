@@ -22,10 +22,10 @@ var scores_list: Array = [ # Lista de pontuação
 	8
 ]
 var score: int = 0
-@export var collected_effect: PackedScene = null
+@export var collected_effect: PackedScene = null # pacote de particula de coletar
 
 func _ready() -> void:
-	randomize()
+	randomize() # random
 	
 	var random_number: int = randi() % fruit_list.size() #Um numero aleatório
 	sprite.texture = load(
