@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck3b1f02yv5m1"]
+
+[ext_resource type="Texture2D" uid="uid://dhxr8ktmp28mk" path="res://assests/Other/Dust Particle.png" id="1_vd31l"]
+
+[sub_resource type="Curve" id="Curve_10w52"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kl4t3"]
+curve = SubResource("Curve_10w52")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wc8h3"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_kl4t3")
+
+[node name="Dust" type="GPUParticles2D"]
+show_behind_parent = true
+amount = 16
+texture = ExtResource("1_vd31l")
+process_material = SubResource("ParticleProcessMaterial_wc8h3")
